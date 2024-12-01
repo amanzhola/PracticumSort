@@ -52,8 +52,14 @@ public class ListTextAdapter extends RecyclerView.Adapter {
             Toast.makeText(itemView.getContext(), message, Toast.LENGTH_SHORT).show();
         }
 
+        /*
+        В методе setClickListener воспользуемся методом setOnClickListener для установки слушателя нажатий.
+        В лямбда-выражении мы будем отображать сообщение с текстом, который был нажат.
+         */
         private void setClickListener(TextItem item) {
             // TODO (2) добавить обработку нажатия на кнопку
+            // Устанавливаем слушатель на itemView с использованием лямбда-выражения
+            itemView.setOnClickListener(v -> showMessage(item.getText()));
         }
     }
 
